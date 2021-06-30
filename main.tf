@@ -34,6 +34,7 @@ resource "github_repository_file" "tf" {
   commit_message      = "Added Terraform Config"
   commit_author       = "${ var.commit_author }"
   commit_email        = "${ var.commit_email }"
+  overwrite_on_create = true
   depends_on = [github_repository.main]
 }
 
@@ -44,5 +45,6 @@ resource "github_repository_file" "gha" {
   commit_message      = "Added Github Action"
   commit_author       = "${ var.commit_author }"
   commit_email        = "${ var.commit_email }"
+  overwrite_on_create = true
   depends_on = [github_repository.main, github_repository_file.tf]
 }

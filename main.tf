@@ -24,7 +24,6 @@ resource "random_string" "random" {
 
 resource "github_repository" "main" {
   name                  = "${ random_string.random.result }"
-  github_branch_default = "main"
   auto_init             = true
 }
 

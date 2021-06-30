@@ -40,7 +40,7 @@ resource "github_repository_file" "gha" {
   repository          = github_repository.main.name
   file                = ".github/workflows/index.yaml"
   content             = ".github/workflows/index.yaml"
-  commit_message      = "Added Terraform Config"
+  commit_message      = "Added Github Action"
   commit_author       = "${ var.commit_author }"
   commit_email        = "${ var.commit_email }"
   depends_on = [github_repository.main, github_repository_file.tf]

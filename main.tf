@@ -23,7 +23,8 @@ resource "random_string" "random" {
 }
 
 resource "github_repository" "main" {
-  name       = "${ random_string.random.result }"
+  name           = "${ random_string.random.result }"
+  default_branch = "main"
 }
 
 resource "github_repository_file" "tf" {

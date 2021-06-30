@@ -2,7 +2,7 @@ name: Create Repo
 on: push
 
 env:
-  GITHUB_TOKEN: ${{ github.token }}
+  GITHUB_TOKEN: ${{ secrets.PAT }}
   GITHUB_FOLDER_NAME: temp
 
 jobs:

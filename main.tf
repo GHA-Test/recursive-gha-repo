@@ -30,7 +30,7 @@ resource "github_repository" "main" {
 resource "github_repository_file" "tf" {
   repository          = github_repository.main.name
   file                = "main.tf"
-  content             = "main.tf"
+  content             = file("./main.tf")
   commit_message      = "Added Terraform Config"
   commit_author       = "${ var.commit_author }"
   commit_email        = "${ var.commit_email }"
@@ -40,7 +40,7 @@ resource "github_repository_file" "tf" {
 resource "github_repository_file" "gha" {
   repository          = github_repository.main.name
   file                = ".github/workflows/index.yaml"
-  content             = ".github/workflows/index.yaml"
+  content             = file("./.github/workflows/index.yaml")
   commit_message      = "Added Github Action"
   commit_author       = "${ var.commit_author }"
   commit_email        = "${ var.commit_email }"
